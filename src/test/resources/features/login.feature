@@ -1,7 +1,6 @@
 @smoke
 Feature: Login/out functionality for every user
 
-    @wip
     Scenario Outline: user login functionality
       Given I am on the "login" page
       When I enter "positive" datatype as "<user>"
@@ -12,7 +11,6 @@ Feature: Login/out functionality for every user
         | storemanager |
         | salesmanager |
 
-      @test
     Scenario Outline: user logout functionality
       When I login as "<user>"
       When I click on "logout"
