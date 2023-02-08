@@ -1,3 +1,4 @@
+@smoke
 Feature: Login/out functionality for every user
 
     @wip
@@ -19,3 +20,5 @@ Feature: Login/out functionality for every user
       Examples: data are going to pass
         | user |
         | driver |
+        | storemanager |
+        | salesmanager |
