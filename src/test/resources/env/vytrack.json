@@ -1,0 +1,14 @@
+{
+  "url": "https://qa3.vytrack.com/user/login",
+  "positive": {
+    "driver": [
+      {"username": "user1","password": "8OFvScjY41pTtpX+/MWwjQ=="}
+    ],
+    "storemanager": [
+      {"username": "storemanager51","password": "8OFvScjY41pTtpX+/MWwjQ=="}
+    ],
+    "salesmanager": [
+      {"username": "salesmanager101","password": "8OFvScjY41pTtpX+/MWwjQ=="}
+    ]
+  }
+}
