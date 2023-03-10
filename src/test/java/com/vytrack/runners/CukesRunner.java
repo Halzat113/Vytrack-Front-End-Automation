@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
         features = "src/test/resources",
         glue = "com/vytrack/stepDefs",
         dryRun = false,
-        tags = "@smoke"
+        tags = "@test"
 
 )
 public class CukesRunner {

@@ -1,6 +1,7 @@
 @smoke
 Feature: Login/out functionality for every user
 
+    @test
     Scenario Outline: user login functionality
       Given I am on the "login" page
       When I enter "positive" datatype as "<user>"

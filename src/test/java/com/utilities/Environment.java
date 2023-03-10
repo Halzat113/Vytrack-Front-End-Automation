@@ -19,8 +19,6 @@ public class Environment {
             } else {
                 path = "src/test/resources/env/" + properties.getProperty("env") + ".properties";
             }
-            input = new FileInputStream(path);
-            properties.load(input);
 
 
             input.close();

@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import static com.utilities.BrowserUtil.*;
+import static com.utilities.JsonReader.*;
 import static com.utilities.DataUtil.*;
 
 public class LoginPage {
@@ -46,17 +47,11 @@ public class LoginPage {
     }
 
     public void login(String dataType,String as){
-        if (dataType.equalsIgnoreCase("positive")){
-            fillUpInput("username", Environment.getProperty(as+"_username"));
-            fillUpInput("password", decrypt(Environment.getProperty("password")));
-            click(submitButton);
-        } else if (dataType.equalsIgnoreCase("negative")) {
-            fillUpInput("username",Environment.getProperty("badUsername"));
-            fillUpInput("password",Environment.getProperty("badPassword"));
-            click(submitButton);
-        }else {
-            throw new RuntimeException("Unexpected input");
-        }
+        String username = getSingleString(as,"username",dataType);
+        String password = decrypt(getSingleString(as,"password",dataType));
+        fillUpInput("username",username);
+        fillUpInput("password",password);
+        click(submitButton);
     }
 
     public void login(String user){
