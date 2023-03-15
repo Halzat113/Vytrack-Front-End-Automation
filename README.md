@@ -46,6 +46,8 @@ To run the test , navigate to ``Vytrack`` directory and simply run
 ## Reporting
 Reports for each module are written into their respective /target directories after a successful run.
 
+## Test Cases
+All the test cases are written in this location [link](https://docs.google.com/spreadsheets/d/1E9a5syBCIpWJbewapRCqp2eXGG2uRicorV7RJRL76Ek/edit#gid=0)
 
 
 
