@@ -10,5 +10,16 @@
     "salesmanager": [
       {"username": "salesmanager101","password": "8OFvScjY41pTtpX+/MWwjQ=="}
     ]
+  },
+  "negative": {
+    "driver": [
+      {"username": "userblas","password": "asdfe+/MWwjQ=="}
+    ],
+    "storemanager": [
+      {"username": "manager","password": "tuaq2+/MWwjQ=="}
+    ],
+    "salesmanager": [
+      {"username": "sanejasd","password": "teuw3+/MWwjQ=="}
+    ]
   }
 }
