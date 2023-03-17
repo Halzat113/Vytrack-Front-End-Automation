@@ -46,6 +46,11 @@ public class LoginPage {
         click(resetPasswordLink);
     }
 
+    /**
+     *
+     * @param dataType positive, negative
+     * @param as driver, storemanager, salesmanager
+     */
     public void login(String dataType,String as){
         String username = getSingleString(as,"username",dataType);
         String password = decrypt(getSingleString(as,"password",dataType));
@@ -54,8 +59,12 @@ public class LoginPage {
         click(submitButton);
     }
 
-    public void login(String user){
-        login("positive",user);
+    /**
+     *
+     * @param as, storemanager, salesmanager
+     */
+    public void login(String as){
+        login("positive",as);
     }
 
     public String getTitle(){return "Login";}

@@ -2,16 +2,18 @@ package com.vytrack.stepDefs;
 
 import com.utilities.Driver;
 import static com.utilities.JsonReader.*;
+
+import com.utilities.GlobalData;
 import io.cucumber.java.*;
 import java.time.Duration;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import java.util.concurrent.TimeUnit;
-
 public class Hooks {
+    GlobalData data = new GlobalData();
     @Before
-    public void setupScenario(){
+    public void setupScenario(Scenario scenario){
+        data.setScenarioName(scenario.getName());
         Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         Driver.getDriver().manage().window().maximize();
         Driver.getDriver().get(getSingleString("url"));

@@ -1,13 +1,14 @@
 package com.vytrack.stepDefs;
 
-import com.utilities.Environment;
+import com.utilities.GlobalData;
 import com.vytrack.pages.LoginPage;
 import com.vytrack.pages.MainPage;
+import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
 import static com.utilities.BrowserUtil.*;
-import org.junit.Assert;
 
 public class LoginStepDef {
+    GlobalData data = new GlobalData();
     LoginPage loginPage = new LoginPage();
     MainPage mainPage = new MainPage();
     @Given("I am on the {string} page")
@@ -29,11 +30,9 @@ public class LoginStepDef {
         loginPage.login(user);
     }
 
-    @When("I click on {string}")
-    public void iClickOn(String textName) {
-       mainPage.clickOn(textName);
-        sleep(2);
+
+    @When("I click {string} on {string}")
+    public void iClickOn(String option, String menu) {
+        mainPage.clickOn(option,menu);
     }
-
-
 }
