@@ -1,6 +1,7 @@
 package com.utilities;
 
 import org.junit.Assert;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -53,5 +54,27 @@ public class BrowserUtil {
     public static void waitUntilTobe(WebElement element,String str){
         WebDriverWait wait = new WebDriverWait(Driver.getDriver(),Duration.ofSeconds(5));
         wait.until(ExpectedConditions.textToBePresentInElement(element,str));
+    }
+
+    public static WebElement findByXpath(String xpath){
+       return Driver.getDriver().findElement(By.xpath(xpath));
+    }
+
+    /**
+     * Find the element with custom expath
+     * @param xpath partial xpath
+     * @param format key word
+     * @return webElement
+     */
+    public static WebElement findByXpath(String xpath, String format){
+        return findByXpath(String.format(xpath,format));
+    }
+
+    public static void implicitWaitOff(){
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(0));
+    }
+
+    public static void implicitWaitOn(){
+        Driver.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
     }
 }

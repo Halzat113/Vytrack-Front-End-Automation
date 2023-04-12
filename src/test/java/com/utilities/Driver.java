@@ -6,7 +6,11 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.time.Duration;
 
 public class Driver {
@@ -36,6 +40,15 @@ public class Driver {
                     case "firefox-headless":
                         WebDriverManager.firefoxdriver().setup();
                         driverPool.set(new FirefoxDriver(new FirefoxOptions().setHeadless(true)));
+                    case "remote":
+                        WebDriverManager.chromedriver().setup();
+                        DesiredCapabilities cap = new DesiredCapabilities();
+                        cap.setCapability("browserName","chrome");
+                        try {
+                            driverPool.set( new RemoteWebDriver(new URL("http://34.205.16.125:4444/wd/hub"),cap));
+                        }catch (MalformedURLException e){
+                            e.printStackTrace();
+                        }
 
                 }
             }

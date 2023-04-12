@@ -45,7 +45,7 @@ To run the test , navigate to ``Vytrack`` directory and simply run
 To run the test remotely, change driver to 'remote' in the configuration.properties file
 
 
-Selenium-gird: http://54.167.149.93:4444/grid/console
+Selenium-gird: http://34.205.16.125:4444/grid/console
 ## Reporting
 Reports for each module are written into their respective /target directories after a successful run.
 

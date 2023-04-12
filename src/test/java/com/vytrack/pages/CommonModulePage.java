@@ -2,31 +2,35 @@ package com.vytrack.pages;
 
 import static com.utilities.BrowserUtil.*;
 import com.utilities.Driver;
-import io.cucumber.java.zh_cn.假如;
+import org.apache.commons.lang3.StringUtils;
 import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
 
-public class VehiclesPage extends BasePage{
-    public VehiclesPage(){
+public class CommonModulePage extends BasePage{
+    public CommonModulePage(){
         PageFactory.initElements(Driver.getDriver(),this);
     }
+    protected String creationXpath = "//a[@title='Create Vehicle %s']";
 
     @FindBy(xpath = "//button[@class='btn dropdown-toggle ']")
-    WebElement setPageLink;
+    protected WebElement setPageLink;
 
     @FindBy(xpath = "//button[@class='btn dropdown-toggle ']//following-sibling::ul//a")
-    List<WebElement> pageOptions;
+    protected List<WebElement> pageOptions;
 
     @FindBy(xpath = "//tbody[@class='grid-body']/tr")
-    List<WebElement> items;
+    protected List<WebElement> items;
 
 
+    public void clickCreationButton(String title){
+        String moduleName = StringUtils.capitalize(title.split(" ")[0]);
+        WebElement creationButton = findByXpath(creationXpath,moduleName);
+        click(creationButton);
+    }
     public void setPage(int setPage){
         click(setPageLink);
         for (WebElement webElement : pageOptions) {
