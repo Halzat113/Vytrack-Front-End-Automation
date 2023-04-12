@@ -6,7 +6,7 @@ import static com.utilities.BrowserUtil.*;
 
 import java.util.List;
 
-public abstract class BasePage {
+public abstract class BasePage{
     @FindBy(xpath = "//li[@id='user-menu']/a")
     protected WebElement userMenu;
 
