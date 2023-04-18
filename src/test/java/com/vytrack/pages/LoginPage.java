@@ -2,6 +2,8 @@ package com.vytrack.pages;
 
 import com.utilities.Driver;
 import com.utilities.Environment;
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -19,7 +21,7 @@ public class LoginPage {
     @FindBy(id = "prependedInput2")
     protected WebElement passwordInput;
 
-    @FindBy(id = "remember_me")
+    @FindBy(xpath = "//input[@id='remember_me']")
     protected WebElement rememberMeCheckbox;
 
     @FindBy(xpath = "//a[.='Forgot your password?']")
@@ -61,12 +63,19 @@ public class LoginPage {
 
     /**
      *
-     * @param as, storemanager, salesmanager
+     * @param as, storemanager, salesmanager, driver
      */
     public void login(String as){
         login("positive",as);
     }
 
+    public void clickRememberMe(){
+        click(rememberMeCheckbox);
+    }
+
+    public boolean isChecked(){
+       return rememberMeCheckbox.isSelected();
+    }
     public String getTitle(){return "Login";}
 
 
