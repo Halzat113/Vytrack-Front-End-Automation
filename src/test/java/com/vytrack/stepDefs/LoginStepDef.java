@@ -5,6 +5,8 @@ import com.vytrack.pages.LoginPage;
 import com.vytrack.pages.MainPage;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.*;
+import org.junit.Assert;
+
 import static com.utilities.BrowserUtil.*;
 
 public class LoginStepDef {
@@ -34,5 +36,15 @@ public class LoginStepDef {
     @When("I click {string} on {string}")
     public void iClickOn(String option, String menu) {
         mainPage.clickOn(option,menu);
+    }
+
+    @When("I click on remember me button")
+    public void iClickOnRememberMeButton() {
+        loginPage.clickRememberMe();
+    }
+
+    @Then("then the checkbox should be checked")
+    public void thenTheCheckboxShouldBeChecked() {
+        Assert.assertTrue(loginPage.isChecked());
     }
 }

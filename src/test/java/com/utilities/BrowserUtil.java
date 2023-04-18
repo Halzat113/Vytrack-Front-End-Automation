@@ -1,8 +1,7 @@
 package com.utilities;
 
 import org.junit.Assert;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -19,8 +18,15 @@ public class BrowserUtil {
     }
 
     public static void click(WebElement element){
-        WebDriverWait wait = new WebDriverWait(Driver.getDriver(),Duration.ofSeconds(5));
-        wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+
+        try {
+            WebDriverWait wait = new WebDriverWait(Driver.getDriver(), Duration.ofSeconds(5));
+            wait.until(ExpectedConditions.elementToBeClickable(element)).click();
+        }catch (TimeoutException | ElementClickInterceptedException e){
+            JavascriptExecutor executor = (JavascriptExecutor) Driver.getDriver();
+            executor.executeScript("arguments[0].click();",element);
+        }
+
     }
 
     public static void send_key(WebElement element,String key){

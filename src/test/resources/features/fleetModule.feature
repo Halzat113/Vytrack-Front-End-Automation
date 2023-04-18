@@ -1,3 +1,4 @@
+@regression
 Feature: As user I should be able view fleet module
 
   Background:
