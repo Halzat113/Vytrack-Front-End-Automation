@@ -19,6 +19,7 @@ public class BrowserUtil {
         }
     }
 
+
     public static void click(WebElement element){
 
         try {
