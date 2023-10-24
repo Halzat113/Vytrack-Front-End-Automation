@@ -1,9 +1,9 @@
 # VyTrack_Front_End Automation
-This is a demonstration of fleet application automation testing project with UI acceptance. The framework
+This is a demonstration of a fleet application automation testing project with UI acceptance. The framework
 covers most of the testing strategy with Java cucumber page object model and retrieving the data
-from json file. The goal is to cover all the test cases and try to automate them all and have a
-stable passing rate. Meanwhile secure the sensitive data from publicly read, instead 
-they should be encrypted and getting them from vault. However this is not the top priority but it should
+from JSON file. The goal is to cover all the test cases try to automate them all and have a
+stable passing rate. Meanwhile, secure the sensitive data from publicly read, instead 
+they should be encrypted and get them from the vault. However, this is not the top priority but it should
 be done in the near future.
 
 
@@ -12,7 +12,7 @@ be done in the near future.
 ### pre-requirements:
 - Java 11 or higher
 - Maven
-    - To install maven go to https://maven.apache.org/download.cgi 
+    - To install Maven go to https://maven.apache.org/download.cgi 
    download and install it.
     - If you are using homebrew run 
    ```brew install maven``` on terminal to install maven
@@ -38,7 +38,7 @@ be done in the near future.
 
 ## Usage
 The project is only for front-end functional testing. The test can be 
-utilised independently of the others using maven profiles.
+utilized independently of the others using maven profiles.
 
 To run the test , navigate to ``Vytrack`` directory and simply run
 ``mvn clean verify``
