@@ -10,6 +10,7 @@ import java.time.Duration;
 
 public class BrowserUtil {
 
+
     public static void sleep(int sec){
         try{
             Thread.sleep(sec * 1000L);
@@ -17,6 +18,7 @@ public class BrowserUtil {
             e.printStackTrace();
         }
     }
+
 
     public static void click(WebElement element){
 
