@@ -9,6 +9,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 public class BrowserUtil {
+
     public static void sleep(int sec){
         try{
             Thread.sleep(sec * 1000L);
