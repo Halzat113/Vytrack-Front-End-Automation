@@ -34,7 +34,7 @@ public abstract class BasePage{
         }
     }
 
-    public void selectOption(List<WebElement> elements,String option){
+    private void selectOption(List<WebElement> elements,String option){
         for (WebElement webElement : elements) {
             if (webElement.getText().trim().equalsIgnoreCase(option)){
                 click(webElement);

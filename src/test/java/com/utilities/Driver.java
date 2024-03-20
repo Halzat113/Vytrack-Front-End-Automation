@@ -35,11 +35,11 @@ public class Driver {
                         break;
                     case "chrome-headless":
                         WebDriverManager.chromedriver().setup();
-                        driverPool.set(new ChromeDriver(new ChromeOptions().setHeadless(true)));
+                        driverPool.set(new ChromeDriver(new ChromeOptions().addArguments("--headless=new")));
                         break;
                     case "firefox-headless":
                         WebDriverManager.firefoxdriver().setup();
-                        driverPool.set(new FirefoxDriver(new FirefoxOptions().setHeadless(true)));
+                        driverPool.set(new FirefoxDriver(new FirefoxOptions().addArguments("--headless=new")));
                     case "remote":
                         WebDriverManager.chromedriver().setup();
                         DesiredCapabilities cap = new DesiredCapabilities();
